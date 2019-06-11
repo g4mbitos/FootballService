@@ -59,6 +59,22 @@ public class Team  {
     }
 
     @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if(!(obj instanceof Team))
+            return false;
+
+        Team team = (Team)obj;
+
+        return name.equals(team.name);
+    }
+
+    @Override
     public String toString() {
         return name + (captain != null ? " "+captain.getFirstName()+" "+captain.getLastName() : "");
     }

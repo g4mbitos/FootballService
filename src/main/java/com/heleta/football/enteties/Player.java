@@ -101,6 +101,24 @@ public class Player {
     }
 
     @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if(!(obj instanceof Player))
+            return false;
+
+        Player player = ((Player) obj);
+
+        return firstName.equals(player.getFirstName()) &&
+                lastName.equals(player.getLastName()) &&
+                birthday.equals(player.getBirthday());
+    }
+
+    @Override
     public String toString() {
         return firstName+" "+lastName+", role: "+position;
     }
