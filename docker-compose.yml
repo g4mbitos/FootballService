@@ -1,0 +1,11 @@
+version: "3"
+services:
+  db:
+    image: "postgres:10.8"
+    container_name: "postgre-standalone"
+    environment:
+      POSTGRES_USER=postgres
+      POSTGRES_PASSWORD=123
+      POSTGRES_DATABASE=footballdb
+    ports:
+      - "5432:5432"
