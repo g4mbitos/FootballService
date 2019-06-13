@@ -1,11 +1,21 @@
-version: "3"
+version: "3.7"
+
 services:
   db:
-    image: "postgres:10.8"
+    image: "postgres"
     container_name: "postgre-standalone"
+    restart: always
     environment:
-      POSTGRES_USER=postgres
-      POSTGRES_PASSWORD=123
-      POSTGRES_DATABASE=footballdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DATABASE=footballdb
     ports:
-      - "5432:5432"
+      - 5432:5432
+
+  fm:
+    image: "football-manager"
+    container_name: "fm"
+    ports:
+      - 8080:8080
+    links:
+      - db
