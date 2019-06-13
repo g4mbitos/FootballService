@@ -13,7 +13,7 @@ public interface FootballService {
 
     Player getPlayer(Long id);
 
-    List<Player> getPlayersByTeamName(String teamName);         //additional
+    List<Player> getPlayersByTeamName(String teamName);             //additional
 
     Player addPlayer(Player player);
 
@@ -37,7 +37,7 @@ public interface FootballService {
 
     Team getTeamByName(String name);
 
-    List<Team> getAllTeams();                                   //additional
+    List<Team> getAllTeams();                                       //additional
 
     Team addTeam(Team team);
 
@@ -47,13 +47,13 @@ public interface FootballService {
 
     void deleteTeam(Long id);
 
-    Player getCaptainByTeamName(String name);                   //additional
+    Player getCaptainByTeamName(String name);                       //additional
 
-    Player addPlayerToTeam(Long idPlayer, Long idTeam);         //additional
+    Player addPlayerToTeam(Long idPlayer, Long idTeam);             //additional
 
     Player deletePlayerFromTeam(Long idPlayer);
 
-    Player addNewPlayerToTeam(Player player, Long idTeam);      //additional
+    Player addNewPlayerToTeam(Player player, Long idTeam);          //additional
 
-    Player assignCaptain(Long idCaptain, Long idTeam);            //additional
+    Player assignCaptain(Long idCaptain, Long idTeam);              //additional
 }
