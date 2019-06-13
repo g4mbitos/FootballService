@@ -1,6 +1,6 @@
 docker pull openjdk:8
 docker pull postgres
+docker build . -t football-manager
 docker run --name postgre-standalone -e POSTGRES_PASSWORD=123 -d postgres
 docker exec -it postgre-standalone psql -U postgres -c "CREATE DATABASE footballdb;"
-docker build . -t football-manager
 docker run -p 8080:8080 --name fm --link postgre-standalone:postgres -d football-manager
